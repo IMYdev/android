@@ -1,39 +1,45 @@
-<div align="center">
-<h1>LineageOS Resurrected</h1>
-</br>
-<strong><i> Legacy LineageOS, with the latest patches! </i></strong>
-</br>
-<i> LineageOS is a version of LineageOS 11, that has some additional security patches and bug fixes from 2019 that were never merged for some reason. LineageOS 11 is still EOL, and I recommend using a later version if possible. </i>
-</br>
+# Syncing CyanogenMod 11
 
-Getting started
----------------
-To get started with Android/LineageOS, you'll need to get
-familiar with [Repo](https://source.android.com/source/using-repo.html) and [Version Control with Git](https://source.android.com/source/version-control.html).
+## History:
+This manifest has CM11 with security patches and bug fixes from 2019 that a fellow dev named Ella merged, but for some reason there were issues with syncing, and this repo has these syncing issues fixed, no need to thank me or anything. :)
 
-Credits
--------
-- [**LineageOS**](https://github.com/LineageOS)
-*********
+## Step 1: Install repo
 
-To initialize your local repository using your trees, use a command like this:
+Run the following commands to install her into your system (repo is a girl, right?):
+
+```bash
+mkdir -p ~/.bin
 ```
-repo init -u https://github.com/IMYdev/android.git -b  cm-11.0 --git-lfs --depth=1
+```bash
+PATH="${HOME}/.bin:${PATH}"
 ```
-Then to sync up (dze most optimized repo sync cummand evar) jkjk:
+```bash
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
 ```
+```bash
+chmod a+rx ~/.bin/repo
+```
+
+## Step 2: Use the Custom Manifest
+
+To init(🇬🇧)ialize your local repository using dis manifest, run:
+
+```bash
+repo init -u https://github.com/IMYdev/android.git -b cm-11.0 --git-lfs --depth=1
+```
+
+## Step 3: Sync the Repo
+
+Now, sync the repo with the following (optimized to the point of skibidi) command:
+
+```bash
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc)
 ```
-If you get HTTP errors, when repo finishes, just run
-```
+
+If you run into any HTTP errors (you will), finish the sync by running:
+
+```bash
 repo sync
 ```
-And to start build:
-```
-. build/envsetup.sh
-lunch lineage_<devicecodename>-userdebug
-mka bacon
-```
-You can also replace userdebug with eng for a debug build.
 
-Brought back to life by Ella with <3 and IMY with :middle_finger:
+Brought back to life by Ella (tanks a lot, mate!) with <3 and IMY with :miffle_dinger:
