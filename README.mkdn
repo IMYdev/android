@@ -20,9 +20,9 @@ To initialize your local repository using your trees, use a command like this:
 ```
 repo init -u https://github.com/IMYdev/android.git -b  cm-11.0 --git-lfs --depth=1
 ```
-Then to sync up:
+Then to sync up (dze most optimized repo sync cummand evar) jkjk:
 ```
-repo sync -c -j$(echo 60) --force-sync --no-clone-bundle --no-repo-verify --no-tags --optimized-fetch
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j($nproc)
 ```
 If you get HTTP errors, when repo finishes, just run
 ```
@@ -36,4 +36,4 @@ mka bacon
 ```
 You can also replace userdebug with eng for a debug build.
 
-Brought back to life by Ella with <3.
+Brought back to life by Ella with <3 and IMY with :middle_finger:
