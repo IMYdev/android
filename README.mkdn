@@ -22,7 +22,7 @@ repo init -u https://github.com/IMYdev/android.git -b  cm-11.0 --git-lfs --depth
 ```
 Then to sync up (dze most optimized repo sync cummand evar) jkjk:
 ```
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j($nproc)
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc)
 ```
 If you get HTTP errors, when repo finishes, just run
 ```
